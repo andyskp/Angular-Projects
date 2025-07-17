@@ -3,10 +3,10 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [RouterOutlet], //*TODO: Agrega RouterOutlet
+  templateUrl: './app.component.html', 
+  standalone: true
 })
 export class AppComponent {
-  title = 'bases';
+  name: string = 'Andres';
 }
