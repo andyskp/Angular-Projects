@@ -12,7 +12,7 @@ import { Component, signal } from "@angular/core";
 })
 export class CounterPageComponent {
   couter:number = 1;
-  //? Trabajar con señales  (Signals) se importa
+  //? Trabajar con señales  (Signals) se importa de angular Core
   counterSignel = signal(10);
 
   increaseBy( value:number) {
