@@ -1,7 +1,9 @@
- <h1>Counter: {{couter}}</h1>
- <hr>
- <div class="buttons">
-       <button style="cursor: pointer;" (click)="increaseBy(1)">+1</button>
-       <button style="cursor: pointer;" (click)="decrementBy(1)">-1</button>
-       <button style="cursor: pointer;" (click)="resetCounter()">Reset</button>
- </div>
+<h1>Counter: {{couter}}</h1>
+<h1>Counter Signal: {{counterSignel()}}</h1>
+
+<hr>
+<div class="buttons">
+      <button style="cursor: pointer;" (click)="increaseBy(1)">+1</button>
+      <button style="cursor: pointer;" (click)="decrementBy(1)">-1</button>
+      <button style="cursor: pointer;" (click)="resetCounter()">Reset</button>
+</div>
