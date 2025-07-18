@@ -9,5 +9,3 @@ Comenazr y correr proyecto ejecutando en la terminal:
 ```bash
 ng serve
 ```
-
-
