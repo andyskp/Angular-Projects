@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-dragonball',
   imports: [],
-  templateUrl: './dragonball.component.html',
+  templateUrl: './dragonball-page.component.html',
 })
-export class DragonballComponent {
+export class DragonballPageComponent {
 
 }

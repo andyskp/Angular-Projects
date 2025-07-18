@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { CounterPageComponent } from './Pages/counter/counter-page.component';
 import { HeroPageComponent } from './Pages/hero/hero-page.component';
-import { DragonballComponent } from './Pages/dragonball/dragonball.component';
+import {  DragonballPageComponent } from './Pages/dragonball/dragonball-page.component';
 
 export const routes: Routes = [
       {
@@ -14,7 +14,7 @@ export const routes: Routes = [
       },
       {
             path: 'dragonball',
-            component: DragonballComponent
+            component: DragonballPageComponent
       },
       //? En caso de que falle vuelve al path vacio
       {
