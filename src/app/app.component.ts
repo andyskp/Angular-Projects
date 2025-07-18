@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet], //*TODO: Agrega RouterOutlet
+  imports: [RouterOutlet,], //*TODO: Agrega RouterOutlet
   templateUrl: './app.component.html', 
   standalone: true
 })
