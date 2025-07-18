@@ -4,9 +4,16 @@ import { HeroPageComponent } from './Pages/hero/hero-page.component';
 
 export const routes: Routes = [
       {
-            path: '', component: CounterPageComponent,
+            path: '', 
+            component: CounterPageComponent,
       },
       {
-            path: 'hero', component: HeroPageComponent
+            path: 'hero',
+             component: HeroPageComponent
+      },
+      //? En caso de que falle vuelve al path vacio
+      {
+            path:'**',
+             redirectTo: ''
       }
 ];
