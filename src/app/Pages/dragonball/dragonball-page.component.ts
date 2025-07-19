@@ -1,4 +1,4 @@
-import { NgClass } from '@angular/common';
+// import { NgClass } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
 
 //? Interface para tipar el objeto
@@ -13,7 +13,6 @@ interface Character {
   selector: 'app-dragonball',
   imports: [
     // NgClass
-
   ],
   templateUrl: './dragonball-page.component.html',
 })
@@ -29,6 +28,7 @@ export class DragonballPageComponent {
     // powerClasses = computed(() => {
     //   return {
     //     'text-danger':true,
+    //     'text-medium-og':true
     //   }
     // })
 }
