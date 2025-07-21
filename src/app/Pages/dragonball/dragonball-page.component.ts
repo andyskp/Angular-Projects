@@ -52,10 +52,15 @@ export class DragonballPageComponent {
       this.characters.update((list) => [...list, newCharacter])
       this.resetFields();
     }
-
+    
     //? Metodod para reiniciar los inputs
     resetFields() {
       this.name.set("");
       this.power.set(0);
     }
-}
+    deleteCharacter(id: number) {
+      // this.characters.update((list) => list.filter((character) => character.id !== id)); 
+      // console.log(`Character ${id} deleted`);
+    }
+  }
+  

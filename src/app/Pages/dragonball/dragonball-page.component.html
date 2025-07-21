@@ -47,9 +47,9 @@
           [class.text-danger]="character.power > 9000"
           [class.text-primary]="character.power < 9000"
           [class.text-medium-og]="character.power >= 5000"
-        >
+        > 
           - ({{ character.power }})</strong
-        >
+        > <button class=" btn btn-danger" (click)="deleteCharacter(character.id)">Eliminar</button>
       </li>
       } 
 }
