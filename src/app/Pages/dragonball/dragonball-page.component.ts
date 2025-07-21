@@ -17,6 +17,10 @@ interface Character {
   templateUrl: './dragonball-page.component.html',
 })
 export class DragonballPageComponent {
+  //*TODO: Agregar nuevo personaje con su poder usando signals
+  name = signal('Gohan');
+  power = signal(100);
+
   //! Se concatena para mostrar los resultados
     characters = signal<Character[]>([
       {id:1, name:"Goku", power:9001},
@@ -31,4 +35,9 @@ export class DragonballPageComponent {
     //     'text-medium-og':true
     //   }
     // })
+
+    //? Agregar un nuevo personaje
+    addCharacter() {
+      console.log(`${this.name()} - ${this.power()}`) 
+    }
 }
