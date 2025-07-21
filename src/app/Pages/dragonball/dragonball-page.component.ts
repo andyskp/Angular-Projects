@@ -38,6 +38,24 @@ export class DragonballPageComponent {
 
     //? Agregar un nuevo personaje
     addCharacter() {
-      console.log(`${this.name()} - ${this.power()}`) 
+      if (!this.name() || !this.power()  || this.power() <= 0) {
+          return;
+      }
+      const newCharacter: Character = {
+        id: this.characters().length + 1,
+        name: this.name(),
+        power: this.power()
+      };
+      //! Agregar un nuevo personaje usando Push()
+      // this.characters().push(newCaractert);
+      //? Se agrega un nuevo personaje usando Update con signals
+      this.characters.update((list) => [...list, newCharacter])
+      this.resetFields();
+    }
+
+    //? Metodod para reiniciar los inputs
+    resetFields() {
+      this.name.set("");
+      this.power.set(0);
     }
 }

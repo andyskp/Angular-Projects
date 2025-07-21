@@ -12,7 +12,6 @@
       (input)="name.set(txtName.value)"
       #txtName
     />
-    <h3>Poder: {{ power() }}</h3>
     <input 
     type="number"
     class="form-control mt-2"
@@ -52,9 +51,8 @@
           - ({{ character.power }})</strong
         >
       </li>
-      } @else {
-      <li><strong>No hay nadie</strong></li>
-      } }
+      } 
+}
     </ul>
   </div>
 </section>
