@@ -1,5 +1,5 @@
 // import { NgClass } from '@angular/common';
-import { Component, computed, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 //? Interface para tipar el objeto
 interface Character {
@@ -10,13 +10,10 @@ interface Character {
 
 
 @Component({
-  selector: 'app-dragonball',
-  imports: [
-    // NgClass
-  ],
-  templateUrl: './dragonball-page.component.html',
+  selector: 'app-dragonball-super',
+  templateUrl: './dragonball-super-page.component.html',
 })
-export class DragonballPageComponent {
+export class DragonballSuperPageComponent {
   //*TODO: Agregar nuevo personaje con su poder usando signals
   name = signal('');
   power = signal(0);
@@ -24,17 +21,8 @@ export class DragonballPageComponent {
   //! Se concatena para mostrar los resultados
     characters = signal<Character[]>([
       {id:1, name:"Goku", power:9001},
-      // {id:2, name:"Vegeta", power:9000},
-      // {id:3, name:"Piccolo", power:7000},
-      // {id:4, name:"Yamcha", power:500},
+      {id:2, name:"Vegeta", power:8000},
     ]);
-
-    // powerClasses = computed(() => {
-    //   return {
-    //     'text-danger':true,
-    //     'text-medium-og':true
-    //   }
-    // })
 
     //? Agregar un nuevo personaje
     addCharacter() {
@@ -46,9 +34,6 @@ export class DragonballPageComponent {
         name: this.name(),
         power: this.power()
       };
-      //! Agregar un nuevo personaje usando Push()
-      // this.characters().push(newCaractert);
-      //? Se agrega un nuevo personaje usando Update con signals
       this.characters.update((list) => [...list, newCharacter])
       this.resetFields();
     }
