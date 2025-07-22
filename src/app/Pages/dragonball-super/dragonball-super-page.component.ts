@@ -30,24 +30,5 @@ export class DragonballSuperPageComponent {
   addCharacter(character: Character) {
     this.characters.update((list) => [...list, character]);
   }
-
-  //? Agregar un nuevo personaje
-  
-    // this.characters.update((list) => [...list, newCharacter])
-    // this.resetFields();
-  }
-
-
-  //? Metodod para reiniciar los inputs
-  // resetFields() {
-  //   this.name.set("");
-  //   this.power.set(0);
-  // }
-  // deleteCharacter(id: number) {
-  //   this.characters.update((list) =>
-  //     list.filter((character) => character.id !== id)
-  //   );
-  //   confirm(`Quieres Eliminar a este personaje? ${id}`);
-  //   alert('Eliminado');
-  
+};
 

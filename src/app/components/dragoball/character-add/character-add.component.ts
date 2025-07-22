@@ -17,10 +17,13 @@ export class CharacterAddComponent {
       return;
     }
     const newCharacter: Character = {
+      //*TODO Se agrega el id de forma aleatoria
       id: Math.floor(Math.random() * 1000),
       name: this.name(),
       power: this.power(),
     };
+
+    //! Ejemplo de output emit() [para emitir informacion a otro componente]
     this.newCharacter.emit(newCharacter);
     //! Agregar un nuevo personaje usando Push()
     // this.characters().push(newCaractert);

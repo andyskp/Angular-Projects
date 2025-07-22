@@ -6,6 +6,7 @@ import type { Character } from '../../../interfaces/character.interface';
   templateUrl: './character-list.component.html',
 })
 export class CharacterListComponent {
-  characters = input.required<Character[]>(); //? Se utiliza para recibir el valor de la señal
+  //? Se utiliza para recibir el valor de la señal
+  characters = input.required<Character[]>(); 
   listName = input.required<string>();
 }
