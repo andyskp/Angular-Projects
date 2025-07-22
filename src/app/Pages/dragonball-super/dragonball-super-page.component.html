@@ -3,7 +3,7 @@
 <section class="row">
   <div class="col-12 col-sm-6">
     <app-dragonball-character-add 
-    (newCharacter)="addCharacter($event)"
+    (newCharacter)="dragonBallService.addCharacter($event)"
     />
    
   </div>
@@ -11,6 +11,6 @@
     <!-- Se Agrega utiliza input de angular core para comunicacion entre componentes -->
     <dragoball-character-list
     listName = "Listado de personajes"
-    [characters]="characters()" />
+    [characters]="dragonBallService.characters()" />
   </div>
 </section>

@@ -1,14 +1,10 @@
 // import { NgClass } from '@angular/common';
-import { Component, input, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CharacterListComponent } from '../../components/dragoball/character-list/character-list.component';
 import { CharacterAddComponent } from "../../components/dragoball/character-add/character-add.component";
+import { DragonballService } from '../../services/dragonball.service';
 
 //? Interface para tipar el objeto
-interface Character {
-  id: number;
-  name: string;
-  power: number;
-}
 
 @Component({
   selector: 'app-dragonball-super',
@@ -17,18 +13,16 @@ interface Character {
 })
 export class DragonballSuperPageComponent {
   //*TODO: Agregar nuevo personaje con su poder usando signals
-  listName = '';
-  name = input.required<string>();
-  power = input.required<number>();
+  // listName = '';
 
-  //! Se concatena para mostrar los resultados
-  characters = signal<Character[]>([
-    { id: 1, name: 'Goku', power: 9001 },
-    { id: 2, name: 'Vegeta', power: 8000 },
-  ]);
+  //*TODO - Inyectar el servicio con el contructor
+  // constructor(
+  //   public dragonballService: DragonballService
+  // ){}
 
-  addCharacter(character: Character) {
-    this.characters.update((list) => [...list, character]);
-  }
+  //? INYECTAR EL SERVICIO CON INJECT
+  public dragonBallService = inject(DragonballService);
+  
 };
+
 
