@@ -18,8 +18,8 @@ interface Character {
 })
 export class DragonballPageComponent {
   //*TODO: Agregar nuevo personaje con su poder usando signals
-  name = signal('Gohan');
-  power = signal(100);
+  name = signal('');
+  power = signal(0);
 
   //! Se concatena para mostrar los resultados
     characters = signal<Character[]>([
@@ -59,8 +59,9 @@ export class DragonballPageComponent {
       this.power.set(0);
     }
     deleteCharacter(id: number) {
-      // this.characters.update((list) => list.filter((character) => character.id !== id)); 
-      // console.log(`Character ${id} deleted`);
+      this.characters.update((list) => list.filter((character) => character.id !== id)); 
+      confirm(`Quieres Eliminar a este personaje? ${id}`);
+      alert("Eliminado");
     }
   }
   
