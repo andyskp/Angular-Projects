@@ -2,7 +2,9 @@
 <hr />
 <section class="row">
   <div class="col-12 col-sm-6">
-    <app-dragonball-character-add/>
+    <app-dragonball-character-add 
+    (newCharacter)="addCharacter($event)"
+    />
    
   </div>
   <div class="col-12 col-sm-6">
