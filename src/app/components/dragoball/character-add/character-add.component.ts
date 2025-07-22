@@ -1,13 +1,13 @@
 import { Component,  signal } from '@angular/core';
-import { Character } from '../../interfaces/character.interface';
+import { Character } from '../../../interfaces/character.interface';
 
 @Component({
   selector: 'app-dragonball-character-add',
   imports: [],
-  templateUrl: './dragonball-character-add.component.html',
+  templateUrl: './character-add.component.html',
 })
-export class DragonballCharacterAddComponent {
-  name = signal('');
+export class CharacterAddComponent {
+  name =  signal('');
   power = signal(0);
   characters = signal<Character[]>([]);
 
