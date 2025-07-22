@@ -2,50 +2,13 @@
 <hr />
 <section class="row">
   <div class="col-12 col-sm-6">
-    <h3>Agregar:</h3>
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Nombre del personaje"
-      [value]="name()"
-      (change)="name.set(txtName.value)"
-      #txtName
-    />
-    <input
-      type="number"
-      class="form-control mt-2"
-      placeholder="Poder del personaje"
-      [value]="power()"
-      (change)="power.set(+txtPower.value)"
-      #txtPower
-    />
-    <button (click)="addCharacter()" class="btn btn-primary mt-2">
-      Agregar
-    </button>
+    <app-dragonball-character-add/>
+   
   </div>
   <div class="col-12 col-sm-6">
-    <h3>Listado</h3>
-    <ul class="list-group">
-      <!--Inreraciones con la nueva logica @for y se toma en cuenta el $index -->
-      @for (character of characters(); track character.id; let idx = $index) {
-      @if (character.power > 500) {
-      <li>
-        <span>{{ idx + 1 }} - {{ character.name }}</span>
-        <!-- Se trabaja la directica class para adecuar condicionalmente un estilo de css usando bootstrap-->
-        <strong
-          [class.text-danger]="character.power > 9000"
-          [class.text-primary]="
-            character.power <= 9000 && character.power >= 7000
-          "
-          [class.text.success]="character.power < 1000"
-        >
-          ({{ character.power }})</strong
-        ><button (click)="deleteCharacter(character.id)" class="btn btn-danger">
-          Eliminar
-        </button>
-      </li>
-      }
- }
-    </ul>
+    <!-- Se Agrega utiliza input de angular core para comunicacion entre componentes -->
+    <dragoball-character-list
+    listName = "Listado de personajes"
+    [characters]="characters()" />
   </div>
 </section>

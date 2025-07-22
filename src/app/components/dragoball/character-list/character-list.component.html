@@ -1,0 +1,21 @@
+<h3>{{ listName() }}</h3>
+    <ul class="list-group">
+      <!--Inreraciones con la nueva logica @for y se toma en cuenta el $index -->
+      @for (character of characters(); track character.id; let idx = $index) {
+      @if (character.power > 500) {
+      <li>
+        <span>{{ idx + 1 }} - {{ character.name }}</span>
+        <!-- Se trabaja la directica class para adecuar condicionalmente un estilo de css usando bootstrap-->
+        <strong
+          [class.text-danger]="character.power > 9000"
+          [class.text-primary]="
+            character.power <= 9000 && character.power >= 7000
+          "
+          [class.text.success]="character.power < 1000"
+        >
+          ({{ character.power }})</strong
+        >
+      </li>
+      }
+ }
+    </ul>

@@ -3,11 +3,10 @@ import { Component, computed, signal } from '@angular/core';
 
 //? Interface para tipar el objeto
 interface Character {
-  id:number;
-  name:string;
-  power:number;
-};
-
+  id: number;
+  name: string;
+  power: number;
+}
 
 @Component({
   selector: 'app-dragonball',
@@ -22,46 +21,49 @@ export class DragonballPageComponent {
   power = signal(0);
 
   //! Se concatena para mostrar los resultados
-    characters = signal<Character[]>([
-      {id:1, name:"Goku", power:9001},
-      // {id:2, name:"Vegeta", power:9000},
-      // {id:3, name:"Piccolo", power:7000},
-      // {id:4, name:"Yamcha", power:500},
-    ]);
+  characters = signal<Character[]>([
+    { id: 1, name: 'Goku', power: 9001 },
+    // {id:2, name:"Vegeta", power:9000},
+    // {id:3, name:"Piccolo", power:7000},
+    // {id:4, name:"Yamcha", power:500},
+  ]);
 
-    // powerClasses = computed(() => {
-    //   return {
-    //     'text-danger':true,
-    //     'text-medium-og':true
-    //   }
-    // })
+  // powerClasses = computed(() => {
+  //   return {
+  //     'text-danger':true,
+  //     'text-medium-og':true
+  //   }
+  // })
 
-    //? Agregar un nuevo personaje
-    addCharacter() {
-      if (!this.name() || !this.power()  || this.power() <= 0) {
-          return;
-      }
-      const newCharacter: Character = {
-        id: this.characters().length + 1,
-        name: this.name(),
-        power: this.power()
-      };
-      //! Agregar un nuevo personaje usando Push()
-      // this.characters().push(newCaractert);
-      //? Se agrega un nuevo personaje usando Update con signals
-      this.characters.update((list) => [...list, newCharacter])
-      this.resetFields();
+  //? Agregar un nuevo personaje
+  addCharacter() {
+    if (!this.name() || !this.power() || this.power() <= 0) {
+      return;
     }
-    
-    //? Metodod para reiniciar los inputs
-    resetFields() {
-      this.name.set("");
-      this.power.set(0);
-    }
-    deleteCharacter(id: number) {
-      this.characters.update((list) => list.filter((character) => character.id !== id)); 
-      confirm(`Quieres Eliminar a este personaje? ${id}`);
-      alert("Eliminado");
-    }
+    const newCharacter: Character = {
+      id: this.characters().length + 1,
+      name: this.name(),
+      power: this.power(),
+    };
+    console.log({ newCharacter });
+
+    //! Agregar un nuevo personaje usando Push()
+    // this.characters().push(newCaractert);
+    //? Se agrega un nuevo personaje usando Update con signals
+    // this.characters.update((list) => [...list, newCharacter])
+    // this.resetFields();
   }
-  
+
+  //? Metodod para reiniciar los inputs
+  resetFields() {
+    this.name.set('');
+    this.power.set(0);
+  }
+  deleteCharacter(id: number) {
+    this.characters.update((list) =>
+      list.filter((character) => character.id !== id)
+    );
+    confirm(`Quieres Eliminar a este personaje? ${id}`);
+    alert('Eliminado');
+  }
+}
