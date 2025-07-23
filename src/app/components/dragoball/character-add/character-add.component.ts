@@ -37,4 +37,6 @@ export class CharacterAddComponent {
     this.name.set('');
     this.power.set(0);
   }
+
+  
 }
