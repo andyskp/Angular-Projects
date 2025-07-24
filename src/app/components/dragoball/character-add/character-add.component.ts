@@ -12,6 +12,8 @@ export class CharacterAddComponent {
 
   //! Ejemplo de output
   newCharacter = output<Character>();
+  deleteCharacter = output<(id: number) => void>();
+
   addCharacter() {
     if (!this.name() || !this.power() || this.power() <= 0) {
       return;
@@ -30,6 +32,8 @@ export class CharacterAddComponent {
     //? Se agrega un nuevo personaje usando Update con signals
     // this.characters.update((list) => [...list, newCharacter])
     this.resetFields();
+  }
+  deleteCharacterById(id: number) {
   }
 
   //? Metodod para reiniciar los inputs
